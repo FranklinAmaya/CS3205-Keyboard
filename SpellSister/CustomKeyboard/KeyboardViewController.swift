@@ -63,6 +63,7 @@ class KeyboardViewController: UIInputViewController{
     //preferences
     var spellAssist = true
     var error = true
+    var nextKey = false
 
     @IBOutlet weak var nextKeyboard: UIButton!
     
@@ -264,6 +265,8 @@ class KeyboardViewController: UIInputViewController{
     
     //segue
     @IBAction func unwinding(_ sender: UIStoryboardSegue){}
+    
+    @IBAction func next(_ sender: UIStoryboardSegue){}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! SettingsViewController

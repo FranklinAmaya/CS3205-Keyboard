@@ -48,9 +48,16 @@ class SettingsViewController: UIInputViewController{
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC = segue.destination as! KeyboardViewController
-        destVC.spellAssist = spellAssist
-        destVC.error = error
+        
+        if segue.identifier == "nextKeyboard" {
+            let destVC = segue.destination as! KeyboardViewController
+            destVC.nextInput(destVC.Q)
+        }
+        else{
+            let destVC = segue.destination as! KeyboardViewController
+            destVC.spellAssist = spellAssist
+            destVC.error = error
+        }
     }
     
     //settings
